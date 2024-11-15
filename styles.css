@@ -6,11 +6,22 @@ body {
 
 header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 1em;
   background-color: #333;
   color: white;
+}
+
+header h1 {
+  margin: 0;
+  padding: 0;
+}
+
+header h2 {
+  margin: 0;
+  padding: 0;
 }
 
 /* Desktop Navigation Styles */
@@ -43,7 +54,9 @@ header {
 /* Mobile Navigation Styles */
 .mobile-nav {
   display: none; /* Hide mobile menu by default */
-  position: relative;
+  position: absolute;
+  right: 0;
+  padding-right: 3%;
 }
 
 .hamburger {
