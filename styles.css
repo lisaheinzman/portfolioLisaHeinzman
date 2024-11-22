@@ -6,11 +6,14 @@ body {
 
 header {
   display: flex;
+  position: sticky;
+  top: 0;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   padding: 1em;
   background-color: #333;
+  opacity: 40%;
   color: white;
 }
 
@@ -27,9 +30,11 @@ header h2 {
 /* Desktop Navigation Styles */
 .desktop-nav {
   display: flex;
-  justify-content: center; /* Center the menu horizontally */
-  background-color: #858585;
+  justify-content: flex-end; /* Center the menu horizontally */
   padding: 1em 0;
+  position: absolute;
+  right: 0;
+  padding-right: 5%;
 }
 
 .desktop-nav ul {
@@ -70,7 +75,7 @@ header h2 {
 }
 
 .mobile-menu {
-  display: none; /* Hidden by default, toggled with JavaScript */
+  display: none;
   position: absolute;
   top: 3em;
   right: 1em;
@@ -93,8 +98,83 @@ header h2 {
   background-color: #555;
 }
 
-#projects-container {
+.circle {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  background-color: red;
+  justify-self: center;
+}
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background-color: red;
+  border-radius: 8px;
+  animation: animate 5s ease-in-out forwards;
+}
+
+.text {
+  color: red;
+}
+
+.box {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  box-sizing: border-box; /* Include padding in size */
+}
+.content {
+  text-align: start;
+  font-size: 2rem;
   color: black;
+}
+.welcome-content {
+  text-align: start;
+  font-size: 2rem;
+  color: black;
+}
+.about-content {
+  text-align: start;
+  padding-top: 5%;
+  padding-left: 3%;
+  font-size: 2rem;
+  color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: pink;
+  border-radius: 10px;
+  display: grid; /* Enable grid layout */
+  grid-template-columns: 1fr;
+}
+
+#scrollButton {
+  color: black;
+  font-size: 24px;
+  border: none;
+  cursor: pointer; /* Change cursor to pointer when hovered */
+  display: block;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  transition: color 0.7s ease; /* Smooth background color transition */
+}
+
+/* Hover effect */
+#scrollButton:hover {
+  color: darkred;
+}
+
+@keyframes animate {
+  0% {
+    left: -10;
+  }
+  100% {
+    left: 100;
+  }
 }
 
 /* Media Queries */
@@ -109,8 +189,21 @@ header h2 {
     display: none;
   }
 
-  #projects-container {
-    display: none;
+  #about-container {
+    display: block;
+  }
+  .about-content {
+    grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+    grid-template-areas: "left-column circle";
+  }
+  .circle {
+    grid-area: circle; /* Place in the second column */
+    justify-self: center; /* Center in column */
+    align-self: center;
+  }
+
+  .left-column {
+    grid-area: left-column; /* Place in the first column */
   }
 }
 
@@ -125,7 +218,7 @@ header h2 {
     display: block;
   }
 
-  #projects-container {
+  #about-container {
     display: block;
   }
 }

@@ -1,7 +1,7 @@
 const text = ["designer", "developer", "digital artist"];
 const displayElement = document.getElementById("animated-header");
-const typeSpeed = 500;
-const deleteSpeed = 250;
+const typeSpeed = 300;
+const deleteSpeed = 150;
 
 let index = 0;
 let wordIndex = 0;

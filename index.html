@@ -3,50 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Navigation</title>
+    <title>Lisa Heinzman</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="box">
+      <div class="welcome-content">
+        <h1>Lisa Heinzman</h1>
+        <div id="animated-header"></div>
+        <script src="headerAnimation.js"></script>
+        <button id="scrollButton" data-target="about-container">\/</button>
+      </div>
+    </div>
     <header>
       <h1>Lisa Heinzman</h1>
       <!-- Mobile Hamburger Menu -->
       <div class="mobile-nav">
         <button id="hamburger" class="hamburger">☰</button>
         <div id="mobileMenu" class="mobile-menu">
-          <a href="#home">Home</a>
-          <a href="#about">About Me</a>
-          <a href="#services">Projects</a>
-          <a href="#contact">Resume</a>
+          <a id="mobileAbout" data-target="about-container">About Me</a>
+          <a id="mobileSkills" data-target="skills-container">Skills</a>
+          <a id="mobileResume" data-target="resume-container">Resume</a>
+          <a id="mobileProjects" data-target="projects-container">Projects</a>
         </div>
       </div>
-
-      <div id="animated-header"></div>
-      <script src="headerAnimation.js"></script>
+      <!-- Desktop Navigation Bar -->
+      <nav class="desktop-nav">
+        <ul>
+          <li>
+            <a id="desktopAbout" data-target="about-container">About Me</a>
+          </li>
+          <li>
+            <a id="desktopSkills" data-target="skills-container">Skills</a>
+          </li>
+          <li>
+            <a id="desktopProjects" data-target="projects-container"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a id="desktopResume" data-target="resume-container">Resume</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <!-- Desktop Navigation Bar -->
-    <nav class="desktop-nav">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#services">Projects</a></li>
-        <li><a href="#contact">Resume</a></li>
-      </ul>
-    </nav>
 
-    <!-- Projects container -->
+    <!-- Containers for Dynamic Content -->
+    <div id="about-container"></div>
+    <div id="skills-container"></div>
     <div id="projects-container"></div>
+    <div id="resume-container"></div>
 
-    <!-- Module Script -->
-    <script type="module">
-      // Import the Projects function from projects.js
-      import { Projects } from "./projects.js";
-
-      // Find the container where you want to insert the component
-      const container = document.getElementById("projects-container");
-
-      // Append the Projects component to the container
-      container.appendChild(Projects());
-    </script>
+    <!-- Main Script -->
+    <script type="module" src="main.js"></script>
 
     <script src="script.js"></script>
   </body>
