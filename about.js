@@ -6,7 +6,7 @@ export function About() {
         <div class="circle test3"></div>
         <div class="left-column">
           <h2 class="title">About Me</h2>
-          <p class="test">About me info here adlsnaflkn 
+          <p class="paragraph">About me info here adlsnaflkn 
           a;dsnfa;nsd;nfkajn;s
           a;ksdjnfknd ;kans;ldkn;alnd
           sad;knf;sdnl;fna

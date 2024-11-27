@@ -35,12 +35,12 @@ renderComponent("resume-container", Resume);
 
 // Map class names to their corresponding animation classes
 const classToAnimation = {
-  test: "fade",
+  paragraph: "fade",
   title: "line-up",
   test3: "fade-in",
 };
 const classUnToAnimation = {
-  test: "un-fade",
+  paragraph: "un-fade",
   title: "un-fade",
   test3: "un-fade",
 };
@@ -75,8 +75,8 @@ const observer = new IntersectionObserver(
   }
 );
 
-// Select the element to observe
-const targetElements = document.querySelectorAll(".test, .title, .test3");
+// Select the elements to observe
+const targetElements = document.querySelectorAll(".paragraph, .title, .test3");
 
 // Observe each element
 targetElements.forEach((element) => {

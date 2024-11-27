@@ -1,3 +1,4 @@
+/* Base styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -17,7 +18,7 @@ header {
   color: white;
 }
 
-header h1 {
+h1 {
   margin: 0;
   padding: 0;
 }
@@ -31,16 +32,13 @@ h2 {
 
 p {
   font-size: 3vw;
-}
-
-.about-content p {
   opacity: 0;
 }
 
 /* Desktop Navigation Styles */
 .desktop-nav {
   display: flex;
-  justify-content: flex-end; /* Center the menu horizontally */
+  justify-content: flex-end;
   padding: 1em 0;
   position: absolute;
   right: 0;
@@ -108,17 +106,7 @@ p {
   background-color: #555;
 }
 
-.circle {
-  width: 15vw;
-  height: 15vw;
-  border-radius: 50%;
-  background-image: url("/gurl.jpg");
-  background-size: cover; /* Ensures the image covers the entire circle */
-  justify-self: center;
-  opacity: 0%;
-  margin-bottom: 5%;
-}
-
+/* Placeholder Styles */
 .box {
   width: 100vw; /* Full width of the viewport */
   height: 100vh; /* Full height of the viewport */
@@ -130,14 +118,48 @@ p {
 }
 .content {
   text-align: start;
+  padding-top: 5%;
+  padding: 3%;
   font-size: 2rem;
   color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-color: pink;
+  border-radius: 10px;
+}
+
+/* Welcome Section */
+.welcome-box {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .welcome-content {
   text-align: start;
   font-size: 2rem;
   color: black;
+  align-content: end;
+  margin-left: 4%;
 }
+#scrollButton {
+  color: black;
+  font-size: 24px;
+  border: none;
+  cursor: pointer; /* Change cursor to pointer when hovered */
+  display: block;
+  margin: 20px auto;
+  margin-bottom: 5%;
+  transition: color 0.7s ease; /* Smooth background color transition */
+  animation: bobble 4s infinite;
+}
+
+#scrollButton:hover {
+  animation-play-state: paused;
+}
+
+/* About Section */
 .about-content {
   text-align: start;
   padding-top: 5%;
@@ -151,18 +173,31 @@ p {
   display: grid; /* Enable grid layout */
   grid-template-columns: 1fr;
 }
-
-#scrollButton {
-  color: black;
-  font-size: 24px;
-  border: none;
-  cursor: pointer; /* Change cursor to pointer when hovered */
-  display: block;
-  margin: 20px auto;
-  margin-bottom: 20px;
-  transition: color 0.7s ease; /* Smooth background color transition */
+.circle {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  background-image: url("/gurl.jpg");
+  background-size: cover; /* Ensures the image covers the entire circle */
+  justify-self: center;
+  opacity: 0%;
+  margin-bottom: 5%;
 }
 
+/* Bobble Animation */
+@keyframes bobble {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Fade Out Animation */
 .fade-in {
   opacity: 0;
   animation: fade-in-an 2s forwards;
@@ -178,6 +213,7 @@ p {
   }
 }
 
+/* Title Animation */
 .line-up {
   opacity: 0;
   transform: translateX(-30px);
@@ -196,16 +232,12 @@ p {
   }
 }
 
+/* Paragraph Animation */
 .fade {
   opacity: 0;
   transform: translateY(20px);
   animation: scroll-in 2s forwards;
   animation-delay: 0.5s;
-}
-
-.fade-out {
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 @keyframes scroll-in {
@@ -218,11 +250,6 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-/* Hover effect */
-#scrollButton:hover {
-  color: darkred;
 }
 
 /* Media Queries */

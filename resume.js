@@ -3,8 +3,8 @@ export function Resume() {
   div.innerHTML = `
       <div class="box">
           <div class="content">
-              <h2>Resume</h2>
-              <p>Resume link here</p>
+              <h2 class="title">Resume</h2>
+              <p class="paragraph">Resume link here</p>
           </div>
       </div>
         `;

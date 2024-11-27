@@ -3,8 +3,8 @@ export function Skills() {
   div.innerHTML = `
     <div class="box">
         <div class="content">
-            <h2>Skills</h2>
-            <p>Skill list here</p>
+            <h2 class="title">Skills</h2>
+            <p class="paragraph">Skill list here</p>
         </div>
     </div>
       `;

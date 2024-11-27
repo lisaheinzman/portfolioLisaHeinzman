@@ -4,7 +4,7 @@ export function Projects() {
       <div class="box">
           <div class="content">
               <h2 class="title">Projects</h2>
-              <p class="test">Projects listed here</p>
+              <p class="paragraph">Projects listed here</p>
           </div>
       </div>
         `;
