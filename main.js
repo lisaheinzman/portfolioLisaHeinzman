@@ -32,3 +32,53 @@ renderComponent("about-container", About);
 renderComponent("skills-container", Skills);
 renderComponent("projects-container", Projects);
 renderComponent("resume-container", Resume);
+
+// Map class names to their corresponding animation classes
+const classToAnimation = {
+  test: "fade",
+  title: "line-up",
+  test3: "fade-in",
+};
+const classUnToAnimation = {
+  test: "un-fade",
+  title: "un-fade",
+  test3: "un-fade",
+};
+
+// Checks if elements are being scrolled past
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Loop through the class-to-animation mapping and add the animation class
+        for (const className in classToAnimation) {
+          if (entry.target.classList.contains(className)) {
+            entry.target.classList.add(classToAnimation[className]);
+          }
+        }
+        // observer.unobserve(entry.target); // Stop observing after adding class
+      } else {
+        // When element is out of view, reset the classes and reassign new classes
+        Object.keys(classToAnimation).forEach((className) => {
+          if (entry.target.classList.contains(className)) {
+            entry.target.classList.remove(classToAnimation[className]);
+            if (classUnToAnimation[className]) {
+              entry.target.classList.add(classUnToAnimation[className]);
+            }
+          }
+        });
+      }
+    });
+  },
+  {
+    threshold: 0.5, // Trigger when 50% of the element is in the viewport
+  }
+);
+
+// Select the element to observe
+const targetElements = document.querySelectorAll(".test, .title, .test3");
+
+// Observe each element
+targetElements.forEach((element) => {
+  observer.observe(element);
+});

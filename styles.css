@@ -22,9 +22,19 @@ header h1 {
   padding: 0;
 }
 
-header h2 {
+h2 {
   margin: 0;
   padding: 0;
+  opacity: 0;
+  font-size: 5vw;
+}
+
+p {
+  font-size: 3vw;
+}
+
+.about-content p {
+  opacity: 0;
 }
 
 /* Desktop Navigation Styles */
@@ -99,24 +109,14 @@ header h2 {
 }
 
 .circle {
-  width: 10vw;
-  height: 10vw;
+  width: 15vw;
+  height: 15vw;
   border-radius: 50%;
-  background-color: red;
+  background-image: url("/gurl.jpg");
+  background-size: cover; /* Ensures the image covers the entire circle */
   justify-self: center;
-}
-
-.rectangle {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  background-color: red;
-  border-radius: 8px;
-  animation: animate 5s ease-in-out forwards;
-}
-
-.text {
-  color: red;
+  opacity: 0%;
+  margin-bottom: 5%;
 }
 
 .box {
@@ -163,18 +163,66 @@ header h2 {
   transition: color 0.7s ease; /* Smooth background color transition */
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fade-in-an 2s forwards;
+}
+
+@keyframes fade-in-an {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.line-up {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: side-scroll 2s forwards;
+}
+
+@keyframes side-scroll {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: scroll-in 2s forwards;
+  animation-delay: 0.5s;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes scroll-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Hover effect */
 #scrollButton:hover {
   color: darkred;
-}
-
-@keyframes animate {
-  0% {
-    left: -10;
-  }
-  100% {
-    left: 100;
-  }
 }
 
 /* Media Queries */

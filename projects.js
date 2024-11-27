@@ -3,8 +3,8 @@ export function Projects() {
   div.innerHTML = `
       <div class="box">
           <div class="content">
-              <h2>Projects</h2>
-              <p>Projects listed here</p>
+              <h2 class="title">Projects</h2>
+              <p class="test">Projects listed here</p>
           </div>
       </div>
         `;
