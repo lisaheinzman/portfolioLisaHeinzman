@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 // Helper function to render components
 function renderComponent(containerId, component) {
   const container = document.getElementById(containerId);
