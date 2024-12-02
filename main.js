@@ -19,11 +19,13 @@ const classToAnimation = {
   paragraph: "fade",
   title: "line-up",
   test3: "fade-in",
+  icon: "fade-in",
 };
 const classUnToAnimation = {
   paragraph: "un-fade",
   title: "un-fade",
   test3: "un-fade",
+  icon: "un-fade",
 };
 
 // Checks if elements are being scrolled past
@@ -57,7 +59,9 @@ const observer = new IntersectionObserver(
 );
 
 // Select the elements to observe
-const targetElements = document.querySelectorAll(".paragraph, .title, .test3");
+const targetElements = document.querySelectorAll(
+  ".paragraph, .title, .test3, .icon"
+);
 
 // Observe each element
 targetElements.forEach((element) => {

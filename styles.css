@@ -1,4 +1,5 @@
 /* Base styles */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -28,6 +29,12 @@ h2 {
   padding: 0;
   opacity: 0;
   font-size: 5vw;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid black;
 }
 
 p {
@@ -144,8 +151,8 @@ p {
   margin-left: 4%;
 }
 #scrollButton {
-  color: black;
-  font-size: 24px;
+  width: 60px;
+  height: 70px;
   border: none;
   cursor: pointer; /* Change cursor to pointer when hovered */
   display: block;
@@ -185,13 +192,12 @@ p {
 }
 
 /* Skills Section */
-
 #skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
   margin: 0;
 }
 
@@ -203,21 +209,82 @@ p {
 }
 
 .icon {
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   border: 1px solid rgba(0, 0, 0, 0.8);
   margin: 0;
-}
-
-svg {
-  width: 50;
-  height: 50;
+  opacity: 0;
 }
 
 .grid-cell p {
   font-size: 0.5em;
   margin: 0;
   padding: 0;
+}
+
+/* Project Section */
+.project-container-box {
+  width: 100vw; /* Full width of the viewport */
+  height: auto; /* Full height of the viewport */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+}
+.project-container-grid {
+  display: grid;
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #878787;
+  margin-right: 10%;
+  margin-bottom: 10%;
+}
+.project-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: start;
+  align-items: start;
+  place-items: center;
+  padding-left: 5%;
+  background-color: #878787;
+}
+.project-columns p {
+  margin: 0;
+}
+.screenshot {
+  width: 125px;
+  height: 270px;
+  background-color: red;
+  border: red;
+  place-self: center;
+}
+.language-buttons-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1px;
+}
+.language-buttons {
+  border-radius: 10%;
+  border: 1px solid black;
+  opacity: 1;
+  margin: 3%;
+  padding: 3px;
+  font-size: small;
+}
+.language-buttons p {
+  font-size: smaller;
+}
+.nav-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  margin-top: auto;
 }
 
 /* Bobble Animation */
@@ -314,6 +381,13 @@ svg {
   }
   .left-column {
     grid-area: left-column; /* Place in the first column */
+  }
+  .project-container-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5%;
+  }
+  .project-container p {
+    font-size: medium;
   }
 }
 
