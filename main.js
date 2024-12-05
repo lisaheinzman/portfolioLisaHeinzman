@@ -17,15 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Map class names to their corresponding animation classes
 const classToAnimation = {
   paragraph: "fade",
-  title: "line-up",
-  test3: "fade-in",
-  icon: "fade-in",
+  scroll: "scroll-right-anim",
+  scrollL: "scroll-left-anim",
+  pop: "fade-in",
 };
 const classUnToAnimation = {
   paragraph: "un-fade",
-  title: "un-fade",
-  test3: "un-fade",
-  icon: "un-fade",
+  scroll: "un-fade",
+  scrollL: "un-fade",
+  pop: "un-fade",
 };
 
 // Checks if elements are being scrolled past
@@ -60,7 +60,7 @@ const observer = new IntersectionObserver(
 
 // Select the elements to observe
 const targetElements = document.querySelectorAll(
-  ".paragraph, .title, .test3, .icon"
+  ".paragraph, .scroll, .pop, .icon, .scrollL"
 );
 
 // Observe each element
