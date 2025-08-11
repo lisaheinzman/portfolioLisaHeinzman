@@ -1,6 +1,30 @@
 import { scrollToTop } from "./scroll.js";
 
-// Add event listener to the button
+/* Open PDF */
+window.openPDF = function openPDF(pdfUrl) {
+  const windowFeatures = "width=800,height=600,scrollbars=yes,resizable=yes";
+  window.open(pdfUrl, "_blank", windowFeatures);
+};
+
+/* Youtube iframe */
+document
+  .getElementById("openPopupButton")
+  .addEventListener("click", function () {
+    // Show the popup and set the iframe src to load the video
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("videoIframe").src =
+      "https://www.youtube.com/embed/WmXobtxSMQQ?si=HeFbwA86hMfDOoQB"; // Embed URL
+  });
+
+document
+  .getElementById("closePopupButton")
+  .addEventListener("click", function () {
+    // Hide the popup and stop the video by clearing the iframe src
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("videoIframe").src = "";
+  });
+
+/* Handles Animations */
 document.addEventListener("DOMContentLoaded", () => {
   // Select all buttons (or links) that trigger scrolling
   const scrollButtons = document.querySelectorAll("[data-target]");
@@ -21,16 +45,10 @@ const classToAnimation = {
   scrollL: "scroll-left-anim",
   pop: "fade-in",
 };
-const classUnToAnimation = {
-  paragraph: "un-fade",
-  scroll: "un-fade",
-  scrollL: "un-fade",
-  pop: "un-fade",
-};
 
 // Checks if elements are being scrolled past
 const observer = new IntersectionObserver(
-  (entries, observer) => {
+  (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // Loop through the class-to-animation mapping and add the animation class
@@ -39,15 +57,17 @@ const observer = new IntersectionObserver(
             entry.target.classList.add(classToAnimation[className]);
           }
         }
-        // observer.unobserve(entry.target); // Stop observing after adding class
+        // Remove the fade-out class to allow fade-in animation
+        entry.target.classList.remove("fade-out");
+        observer.unobserve(entry.target); // Stop observing after adding class
       } else {
-        // When element is out of view, reset the classes and reassign new classes
+        // When element is out of view, add the fade-out class
+        entry.target.classList.add("fade-out");
+
+        // Loop through class-to-animation mapping and remove the animation class
         Object.keys(classToAnimation).forEach((className) => {
           if (entry.target.classList.contains(className)) {
             entry.target.classList.remove(classToAnimation[className]);
-            if (classUnToAnimation[className]) {
-              entry.target.classList.add(classUnToAnimation[className]);
-            }
           }
         });
       }

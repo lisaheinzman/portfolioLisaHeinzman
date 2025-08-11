@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lisa Heinzman</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Landing Page -->
@@ -15,12 +19,15 @@
         <script src="headerAnimation.js"></script>
       </div>
       <svg id="scrollButton" data-target="about-container">
-        <use xlink:href="icons.svg#icon-down-arrow" width="50"
-        height="50"></use>
+        <use
+          xlink:href="icons.svg#icon-down-arrow"
+          width="50"
+          height="50"
+        ></use>
       </svg>
     </div>
     <header>
-      <h1>Lisa Heinzman</h1>
+      <h1 class="stroke-text">Lisa Heinzman</h1>
       <!-- Mobile Hamburger Menu -->
       <div class="mobile-nav">
         <button id="hamburger" class="hamburger">☰</button>
@@ -55,24 +62,203 @@
     <!-- Containers for Dynamic Content -->
     <!-- About Content -->
     <div id="about-container">
-      <div class="box">
+      <div id="about-box">
         <div class="about-content">
           <div class="circle pop"></div>
           <div class="left-column">
-            <h2 class="scroll">About Me</h2>
-            <p class="paragraph">
-              Hey there! My name is Lisa, and I’m a recent graduate of UCF, where I majored 
-              in Digital Media and minored in IT—basically, I’ve got the
-              perfect combo of creativity and technical know-how. I
-              specialize in crafting websites and apps that are not
-              just easy on the eyes but also easy for everyone to use.
-            </p>
-            <p class="paragraph">
-              I’m excited to bring my energy, skills, and innovative mindset to a team
-               that values pushing boundaries and creating exceptional
-                digital experiences. Let’s build something incredible
-                 together
-            </p>
+            <h2 id="about-title" class="scroll stroke-text">Hey there!</h2>
+            <div id="about-paragraphs">
+              <p class="paragraph">
+                I'm Lisa. I’m a recent graduate of the University of Central
+                Florida with a B.A. in Digital Media and a minor in Information
+                Technology. I design and develop websites and applications that
+                are visually engaging, efficient, and accessible to all users.
+              </p>
+              <p class="paragraph">
+                I’m passionate about inclusive design, creating interfaces that
+                are intuitive and user-friendly for people of all abilities.
+                Alongside front-end expertise, I have experience in back-end
+                database systems, allowing me to combine strong technical
+                foundations with thoughtful, responsive design.
+              </p>
+              <p class="paragraph">
+                I’m excited to bring my creativity, adaptability, and technical
+                skills to a team that values innovation and exceptional digital
+                experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Projects Content -->
+    <div id="projects-container">
+      <div id="popup" class="popup">
+        <div class="popup-content">
+          <span id="closePopupButton" class="close-button">&times;</span>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/WmXobtxSMQQ?si=s-zDdhE0QyPuJyUM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+      <div id="project-box">
+        <div id="project-container-content">
+          <h2 id="projects-title" class="scroll stroke-text">Projects</h2>
+          <div class="project-container-grid">
+            <div class="project-container">
+              <div class="project-columns">
+                <div>
+                  <h3 class="scroll">Hive Help</h3>
+                  <p class="paragraph">2024</p>
+                  <p class="paragraph">
+                    Hive Help is a productivity app where I played a key role in
+                    its development, contributing to comprehensive
+                    documentation, prototyping, and full-stack development.
+                    Built with React for the front end and a robust backend, the
+                    app allows users to create personalized profiles and
+                    securely store their information in a database powered by
+                    Supabase. Key features include an integrated task manager,
+                    implementation of React-Calendar for scheduling, and a
+                    user-friendly interface designed to enhance productivity.
+                    This project showcases a seamless combination of intuitive
+                    design and scalable backend functionality.
+                  </p>
+                </div>
+                <div class="second-column">
+                  <div class="screenshot scrollL"></div>
+                  <div class="language-buttons-container pop">
+                    <div class="language-buttons">
+                      <p class="pop">react</p>
+                    </div>
+                    <div class="language-buttons">
+                      <p class="pop">html</p>
+                    </div>
+                    <div class="language-buttons">
+                      <p class="pop">css</p>
+                    </div>
+                    <div class="language-buttons">
+                      <p class="pop">npm</p>
+                    </div>
+                    <div class="language-buttons">
+                      <p class="pop">supabase</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-buttons">
+                <button
+                  class="nav-button pop"
+                  onclick="window.open('https://lisaheinzman.github.io/hiveHelpiframe/', 'blank')"
+                >
+                  Demo
+                </button>
+                <button
+                  class="nav-button pop"
+                  onclick="window.open('https://github.com/brothstein/HiveHelp', 'blank')"
+                >
+                  Github
+                </button>
+                <button
+                  class="nav-button pop"
+                  onclick="openPDF('hiveHelpDocumentation.pdf')"
+                  ;
+                >
+                  Documentation
+                </button>
+              </div>
+            </div>
+            <div class="project-container">
+              <div class="project-columns">
+                <div>
+                  <h3 class="scroll">Pokédex Database</h3>
+                  <p class="paragraph">2023</p>
+                  <p class="paragraph">
+                    This project is a database system designed to act as a
+                    dynamic Pokédex for managing trainers and their Pokémon
+                    during battles. The system models a 1-to-n relationship
+                    between trainers and their Pokémon, and a similar
+                    relationship between trainers and their items. Built using
+                    MongoDB for a dynamic database system designed to manage
+                    Pokémon and trainers during battles. This project utilizes
+                    MongoDB and Express.js to provide a RESTful API for managing
+                    trainers, their Pokémon, and their items.
+                  </p>
+                </div>
+                <div class="second-column">
+                  <div class="screenshot3 scrollL"></div>
+                  <div class="language-buttons-container pop">
+                    <div class="language-buttons">
+                      <p class="pop">express</p>
+                    </div>
+                    <div class="language-buttons">
+                      <p class="pop">mongoDB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-buttons">
+                <button id="openPopupButton" class="nav-button pop">
+                  Demo
+                </button>
+                <button
+                  class="nav-button pop"
+                  onclick="window.open('https://github.com/lisaheinzman/pokedex-database', 'blank')"
+                >
+                  Github
+                </button>
+              </div>
+            </div>
+            <div class="project-container">
+              <div class="project-columns">
+                <div>
+                  <h3 class="scroll">Village</h3>
+                  <p class="paragraph">2023</p>
+                  <p class="paragraph">
+                    Village is a bartering app that I collaborated on in which
+                    we designed to help individuals exchange skills and
+                    resources, fostering stronger, more connected communities.
+                    As part of a group project, we conducted extensive user
+                    research, including task analysis, user testing, and
+                    iterative prototyping to identify and address key user
+                    needs. By developing detailed user and stakeholder profiles,
+                    we ensured the app’s design aligned with the values and
+                    goals of our target audience. The project culminated in a
+                    high-fidelity prototype, showcasing an intuitive and
+                    engaging platform for community-driven collaboration.
+                  </p>
+                </div>
+                <div class="second-column">
+                  <div class="screenshot2 scroll"></div>
+                  <div class="language-buttons-container pop">
+                    <div class="language-buttons">
+                      <p class="pop">adobeXD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-buttons">
+                <button
+                  class="nav-button pop"
+                  onclick="window.open('https://xd.adobe.com/view/4fa5dee5-ab45-4ae6-85d0-681bf8fc4db9-1af6/screen/6827b35f-024d-4ed8-8fc3-2dc06acae484?fullscreen')"
+                >
+                  Demo
+                </button>
+                <button
+                  class="nav-button pop"
+                  onclick="openPDF('FinalProjectReport.pdf')"
+                  ;
+                >
+                  Documentation
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -81,7 +267,7 @@
     <div id="skills-container">
       <div class="skills-box">
         <div id="skills-content">
-          <h2 class="scroll">Skills</h2>
+          <h2 id="skills-title" class="scroll stroke-text">Skills</h2>
           <div id="skills-grid">
             <div class="grid-cell">
               <svg class="icon pop">
@@ -91,9 +277,7 @@
             </div>
             <div class="grid-cell">
               <svg class="icon pop">
-                <use 
-                  xlink:href="icons.svg#icon-html"
-                ></use>
+                <use xlink:href="icons.svg#icon-html"></use>
               </svg>
               <p class="paragraph">HTML</p>
             </div>
@@ -111,7 +295,11 @@
             </div>
             <div class="grid-cell">
               <svg class="icon pop">
-                <use xlink:href="icons.svg#icon-npm" width="115" height="115"></use>
+                <use
+                  xlink:href="icons.svg#icon-npm"
+                  width="115"
+                  height="115"
+                ></use>
               </svg>
               <p class="paragraph">NPM</p>
             </div>
@@ -147,7 +335,7 @@
             </div>
             <div class="grid-cell">
               <svg class="icon pop">
-                <use xlink:href="icons.svg#icon-js"></use>
+                <use xlink:href="icons.svg#icon-mongoDB"></use>
               </svg>
               <p class="paragraph">MongoDB</p>
             </div>
@@ -157,120 +345,12 @@
               </svg>
               <p class="paragraph">React</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Projects Content -->
-    <div id="projects-container">
-      <div class="box">
-        <div id="project-container-content">
-          <h2 class="scroll">Projects</h2>
-          <div class="project-container-grid">
-            <div class="project-container">
-              <div class="project-columns">
-                <div>
-                  <h3 class="scroll">Hive Help</h3>
-                  <p class="paragraph">2023</p>
-                  <p class="paragraph">
-                    Hive Help is a productivity app that I had a large role in creating.
-                    I contributed to documentation, prototyping, and front and back end 
-                    development. It features a user database served by supabase.
-                  </p>
-                </div>
-                <div class="second-column">
-                  <div class="screenshot scrollL"></div>
-                  <div class="language-buttons-container pop">
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">html</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">css</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">npm</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">supabase</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-buttons">
-                <button class="proj-button pop">Demo</button>
-                <button class="proj-button pop" onclick="window.open('https://github.com/brothstein/HiveHelp', 'blank')">Github</button>
-                <button class="proj-button pop">Documentation</button>
-              </div>
+            <div class="grid-cell">
+              <svg class="icon pop">
+                <use xlink:href="icons.svg#icon-express"></use>
+              </svg>
+              <p class="paragraph">Express</p>
             </div>
-            <div class="project-container">
-              <div class="project-columns">
-                <div>
-                  <h3 class="scroll">Hive Help</h3>
-                  <p class="paragraph">2023</p>
-                  <p class="paragraph">
-                    kdbfk sdfa;sldfnksdf sdkf ask;d f;s df asdkf ;askd f;ka
-                    sdf;aksd a;dsjfanldskjfasdfaks asdjnf;sadfla sadjfknasndf
-                    asdf;jnasldfn asl;kdnf;lkasnf as,f as dfka sdf aksdn fan sdf
-                    asdn f
-                  </p>
-                </div>
-                <div class="second-column">
-                  <div class="screenshot2 scrollL"></div>
-                  <div class="language-buttons-container pop">
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-buttons">
-                <button class="proj-button pop">Demo</button>
-                <button class="proj-button pop">Demo</button>
-              </div>
-            </div>
-            <div class="project-container">
-              <div class="project-columns">
-                <div>
-                  <h3 class="scroll">Hive Help</h3>
-                  <p class="paragraph">2023</p>
-                  <p class="paragraph">
-                    kdbfk sdfa;sldfnksdf sdkf ask;d f;s df asdkf ;askd f;ka
-                    sdf;aksd a;dsjfanldskjfasdfaks asdjnf;sadfla sadjfknasndf
-                    asdf;jnasldfn asl;kdnf;lkasnf as,f as dfka sdf aksdn fan sdf
-                    asdn f
-                  </p>
-                </div>
-                <div class="second-column">
-                  <div class="screenshot2 scrollL"></div>
-                  <div class="language-buttons-container pop">
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                    <div class="language-buttons">
-                      <p class="pop">react</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="nav-buttons">
-                <button class="proj-button pop">Demo</button>
-                <button class="proj-button pop">Github</button>
-                <button class="proj-button pop">Documentation</button>
-              </div>
-            </div>
-          </div>
           </div>
         </div>
       </div>
@@ -278,23 +358,29 @@
     <!-- Resume Content -->
     <div id="resume-container">
       <div class="resume-box">
-        <div class="content">
-          <h2 class="scroll">Resume</h2>
-          <p class="paragraph">Resume here</p>
+        <div id="resume-content">
+          <a href="resume2025.pdf" target="_blank" class="folder-link">
+            <div class="folder class scroll">
+              <div class="folder-tab"></div>
+              <div class="folder-back"></div>
+              <div class="folder-front">
+                <span id="resume-title" class="stroke-text">Resume</span>
+              </div>
+            </div>
+          </a>
+          <div id="text-background">
+            <p class="paragraph">Click folder to open resume</p>
+          </div>
         </div>
       </div>
     </div>
     <!-- Contact Content -->
     <footer id="contact-container">
-        
-          <h4 class="scroll">Contact Me</h4>
-          <p class="paragraph"> Email: lisamariehe@gmail.com</p>
-          <div id="created-by-info"> Built and Designed by Lisa Heinzman</div>
-    </footer> 
+      <div id="created-by-info">Built and Designed by Lisa Heinzman</div>
+    </footer>
 
     <!-- Main Script -->
     <script type="module" src="main.js"></script>
-
     <script src="script.js"></script>
   </body>
 </html>
