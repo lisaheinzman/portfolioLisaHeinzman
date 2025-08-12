@@ -222,11 +222,11 @@ p {
   width: 25vw;
   height: 25vw;
   border-radius: 50%;
-  background-image: url("headshot.jpg");
+  background-image: url("headshot.png");
   background-position: center center;
   background-size: cover;
   justify-self: center;
-  opacity: 0%;
+
   margin-bottom: 1%;
   border: solid #d9ffce 2px;
 }
