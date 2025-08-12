@@ -222,7 +222,7 @@ p {
   width: 25vw;
   height: 25vw;
   border-radius: 50%;
-  background-image: url("/headshot.jpg");
+  background-image: url("headshot.jpg");
   background-position: center center;
   background-size: cover;
   justify-self: center;
@@ -302,7 +302,7 @@ p {
 .screenshot {
   width: 140px;
   height: 300px;
-  background-image: url("/hiveHelp.png");
+  background-image: url("hiveHelp.png");
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -314,7 +314,7 @@ p {
 .screenshot2 {
   width: 140px;
   height: 300px;
-  background-image: url("/villageScreenshot.png");
+  background-image: url("villageScreenshot.png");
   background-size: cover;
   border-radius: 10px;
   box-sizing: border-box;
@@ -324,7 +324,7 @@ p {
 .screenshot3 {
   width: 160px;
   height: 300px;
-  background-image: url("/pokedex.png");
+  background-image: url("pokedex.png");
   background-size: cover;
   background-position: center;
   border-radius: 10px;
@@ -563,6 +563,7 @@ iframe {
   background-color: #ffeeef;
   border-radius: 5px;
   padding: 0px 10px;
+  margin-bottom: 30px;
 }
 
 /* Footer */
